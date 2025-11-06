@@ -14,21 +14,21 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 98%;
+  --background: 0 0% 100%;
 
-  --foreground: 150 8% 15%;
+  --foreground: 150 15% 20%;
 
   --border: 156 12% 88%;
 
-  --card: 150 15% 96%;
+  --card: 150 15% 98%;
 
-  --card-foreground: 150 8% 18%;
+  --card-foreground: 150 15% 20%;
 
   --card-border: 156 12% 90%;
 
   --sidebar: 150 12% 94%;
 
-  --sidebar-foreground: 150 8% 18%;
+  --sidebar-foreground: 150 15% 20%;
 
   --sidebar-border: 156 12% 87%;
 
@@ -44,7 +44,7 @@
 
   --popover: 150 18% 92%;
 
-  --popover-foreground: 150 8% 20%;
+  --popover-foreground: 150 15% 20%;
 
   --popover-border: 156 15% 85%;
 
@@ -58,11 +58,11 @@
 
   --muted: 150 18% 91%;
 
-  --muted-foreground: 150 8% 38%;
+  --muted-foreground: 150 8% 42%;
 
-  --accent: 150 20% 89%;
+  --accent: 36 44% 51%;
 
-  --accent-foreground: 150 10% 24%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 72% 42%;
 
@@ -76,7 +76,12 @@
   --chart-4: 25 65% 55%;
   --chart-5: 170 45% 50%;
 
-  --font-sans: Pretendard, "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --brand: 160 48% 37%;
+  --brand-2: 156 60% 92%;
+  --surface: 150 30% 97%;
+  --line: 156 12% 88%;
+
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
   --radius: .5rem; /* 8px */
