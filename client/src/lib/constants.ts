@@ -19,10 +19,10 @@ export const PRODUCT = {
 };
 
 export const COMPANY_INFO = {
-  address: "서울특별시 강남구 테헤란로 123, 메이딘빌딩 5층",
-  phone: "02-1234-5678",
+  address: "울산광역시 남구 도산로107번길 9, 2층 (달동)",
+  phone: "010-8222-8164",
   email: "contact@meidin.kr",
-  businessNumber: "123-45-67890",
+  businessNumber: "463-05-03407",
   ceo: "신형상",
   established: "2025",
 };
