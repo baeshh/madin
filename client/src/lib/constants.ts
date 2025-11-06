@@ -23,8 +23,8 @@ export const COMPANY_INFO = {
   phone: "02-1234-5678",
   email: "contact@meidin.kr",
   businessNumber: "123-45-67890",
-  ceo: "김대표",
-  established: "2019",
+  ceo: "신형상",
+  established: "2025",
 };
 
 export const CORE_VALUES = [
