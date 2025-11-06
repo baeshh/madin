@@ -1,0 +1,93 @@
+회사 개요 섹션(Overview.tsx) 프롬프트용 텍스트
+// src/components/Overview.tsx
+
+import { Card, CardContent } from "@/components/ui/card";
+import { FlaskConical, Leaf, ShieldCheck } from "lucide-react";
+
+export default function Overview() {
+  return (
+    <section id="overview" className="bg-surface py-20">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-brand mb-8">
+          메이딘, 과학으로 신뢰를 설계합니다.
+        </h2>
+        <p className="text-center text-lg text-muted mb-14 leading-relaxed max-w-3xl mx-auto">
+          메이딘은 <span className="text-brand font-semibold">자연 원료와 과학적 근거</span>를 바탕으로
+          사람의 일상 속 건강을 연구하는 영양제 전문 기업입니다.
+          단순한 제품이 아니라, 신뢰할 수 있는 데이터와 검증된 공정을 통해
+          ‘매일의 균형’을 제공하는 브랜드를 목표로 합니다.
+        </p>
+
+        {/* Core values */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <Card className="text-center shadow-sm border-line rounded-2xl">
+            <CardContent className="py-10">
+              <Leaf className="w-10 h-10 text-brand mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">자연 중심</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                인공 성분보다 자연 원료를 우선하며,
+                국내외 검증된 식물 추출물만을 선별하여 사용합니다.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center shadow-sm border-line rounded-2xl">
+            <CardContent className="py-10">
+              <FlaskConical className="w-10 h-10 text-brand mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">과학 기반</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                원료 단계부터 임상 데이터와 논문 기반의 검증을 수행하며,
+                연구 중심의 R&D 조직이 기능성과 안전성을 실험적으로 입증합니다.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center shadow-sm border-line rounded-2xl">
+            <CardContent className="py-10">
+              <ShieldCheck className="w-10 h-10 text-brand mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">품질 신뢰</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                GMP 인증 공정에서 생산되며, 모든 제품은 HACCP 및 ISO 기준을 준수합니다.
+                메이딘은 ‘투명한 품질 관리’를 기업의 기본 가치로 삼습니다.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Company philosophy */}
+        <div className="text-center">
+          <h3 className="text-2xl font-semibold mb-6">브랜드 철학</h3>
+          <p className="text-base text-muted leading-relaxed max-w-3xl mx-auto">
+            우리는 단기적인 유행이 아닌, 과학적으로 검증된 접근을 통해
+            인체에 도움이 되는 진짜 영양제를 만듭니다.
+            모든 제품은 연구 데이터를 기반으로 기획되며,
+            ‘센시비’와 같은 참당귀 추출물 제품은 인체 염증 반응 개선을 돕는
+            천연 성분 중심의 컨디션 케어 솔루션으로 개발되었습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+🔹 메이딘 기업 소개 문안 (브랜드 개요 설명문 — 사이트/보도자료/소개서 겸용)
+
+메이딘(Meidin)은 자연의 지혜와 과학의 정확성을 결합한 영양제 전문 기업입니다.
+우리는 모든 원료의 출처를 추적하고, 국제 기준에 맞춘 연구·제조 과정을 거쳐
+‘투명하게 검증된 건강 솔루션’을 제시하는 브랜드를 지향합니다.
+
+메이딘의 연구소는 원료 단계부터 임상 데이터 기반의 품질 평가를 수행하며,
+전 제품은 GMP(우수의약품제조관리기준), HACCP(위해요소중점관리기준), ISO 국제 품질 인증 등
+엄격한 글로벌 기준을 충족합니다.
+
+대표 제품 **센시비(SENSIBI)**는 참당귀 추출물 기반으로,
+현대인의 염증 밸런스 회복과 일상 컨디션 관리를 돕기 위해 개발된 기능성 영양제입니다.
+메이딘은 단순한 제품 판매를 넘어, 연구·데이터·신뢰 중심의 건강 문화를 만드는 기업입니다.
+
+🔹 개요 섹션 디자인 포인트
+요소	내용
+컬러	brand(그린) 강조, 배경은 var(--surface)로 자연톤 유지
+타이틀	“메이딘, 과학으로 신뢰를 설계합니다.” — 브랜드 정체성 문장
+구성	① 개요 문장 → ② 핵심가치(3카드) → ③ 브랜드 철학(1문단)
+효과	페이드 인 + upward motion (Framer Motion 사용 시 fadeInUp 패턴)
+목적	단 10초 만에 “연구하는 신뢰 기업” 인식 확립

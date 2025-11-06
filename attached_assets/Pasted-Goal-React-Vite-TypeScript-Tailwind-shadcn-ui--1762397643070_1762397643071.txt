@@ -1,0 +1,234 @@
+Goal
+네이처스팜 느낌을 참고하되, 쇼핑몰 기능 없는 기업 브랜딩용 단일 페이지를 React + Vite + TypeScript + Tailwind + shadcn/ui로 제작한다.
+브랜드명: 메이딘 / 대표 제품: 센시비(참당귀 추출물로 염증 개선 영양제)
+
+Tech Stack
+
+Vite + React + TypeScript
+
+Tailwind CSS + shadcn/ui + lucide-react (아이콘)
+
+react-helmet-async (SEO 메타)
+
+clsx, tailwind-merge (유틸)
+
+배포 친화적 정적 SPA (앵커 내비게이션)
+
+Create & Install
+
+npm create vite@latest meidin-site -- --template react-ts
+
+cd meidin-site
+
+npm i -D tailwindcss postcss autoprefixer → npx tailwindcss init -p
+
+npm i lucide-react clsx tailwind-merge react-helmet-async
+
+shadcn/ui 설정
+
+npm i -D @types/node
+
+npm i tailwindcss-animate class-variance-authority @radix-ui/react-slot
+
+프로젝트에 shadcn/ui 구성 파일 추가 및 Button/Card/Input/Form 등 기본 컴포넌트 설치
+
+Tailwind 설정
+
+tailwind.config.js에 다음을 반영:
+
+content: ["./index.html","./src/**/*.{ts,tsx}"]
+
+plugin: require("tailwindcss-animate")
+
+theme.extend 색상 토큰:
+
+brand: #2F8F6B, brand-2: #DCF2EA, acc: #B88C4A, surface: #F7F9F9, line: #E6ECEA
+
+font: Pretendard 또는 Noto Sans KR 사용 (index.html에 CDN 링크)
+
+폴더 구조(생성해줘)
+
+/src
+  /assets
+    /images (hero.jpg, lab.jpg, product-sensibi.png, cert-1.png, partner-1.png …, og.jpg)
+    /icons  (logo.svg, favicon.ico)
+  /components
+    Header.tsx
+    Footer.tsx
+    Section.tsx
+    Hero.tsx
+    About.tsx
+    RnD.tsx
+    Product.tsx
+    Partners.tsx
+    News.tsx
+    Contact.tsx
+    Badge.tsx
+  /lib
+    seo.ts
+    cn.ts
+    constants.ts
+  /styles
+    globals.css
+  App.tsx
+  main.tsx
+index.html
+robots.txt
+sitemap.xml
+
+
+상수 & 메타 (src/lib/constants.ts, src/lib/seo.ts)
+
+constants.ts에 브랜드/제품 카피 저장:
+
+BRAND = “메이딘”
+
+SLOGAN = “자연의 지혜에 과학을 더하다”
+
+SUB = “메이딘은 원료의 출처부터 제조, 품질관리까지 깐깐한 기준으로 일상의 건강을 설계합니다.”
+
+PRODUCT = { name: “센시비”, descShort: “참당귀 추출물 기반 컨디션 케어”, notes: [“참당귀 추출물”, “일상 컨디션 밸런스”, “간결한 포뮬러 지향”], legal: “본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 과장된 효능·효과를 표방하지 않으며, 개인 상태에 따라 다를 수 있습니다.” }
+
+seo.ts에 Helmet 기본 메타:
+
+title: “메이딘 | 자연의 지혜에 과학을 더하다”
+
+description: “메이딘은 깐깐한 연구 기준으로 일상의 건강을 설계하는 영양제 브랜드입니다. 대표 제품 ‘센시비(참당귀 추출물)’ 등 소개.”
+
+og:title/description/image/type, twitter 카드
+
+글로벌 스타일 (src/styles/globals.css)
+
+Tailwind base/components/utilities 적용
+
+기본 글자: 16/26, 섹션 패딩: 모바일 56px, 데스크톱 80px
+
+a11y 포커스 스타일: outline: 2px solid theme('colors.brand'); outline-offset: 2px;
+
+공통 레이아웃 구성
+
+Header.tsx
+
+좌: 로고(logo.svg)
+
+우: 앵커 메뉴: 회사소개(#about), 연구·기술(#rnd), 제품소개(#product), 소식(#news), 문의(#contact)
+
+우측 끝 CTA 버튼 “제휴·납품 문의” → #contact 스크롤 이동
+
+스크롤 시 축소/섀도우 (sticky top-0 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 shadow-sm 토글)
+
+Footer.tsx
+
+로고/슬로건, 사업자 더미(주소/대표번호/사업자등록번호), 저작권, 이용약관/개인정보 처리방침(앵커)
+
+Section.tsx
+
+공통 섹션 래퍼(container mx-auto px-4 py-14 md:py-20)와 제목/설명 슬롯
+
+섹션 컴포넌트 요구사항
+
+Hero.tsx
+
+좌: 타이틀(SLOGAN), 서브(SUB), CTA 두 개(“메이딘 소개서(PDF)” — dummy 링크, “센시비 자세히 보기” — #product)
+
+우: 제품/연구/원료 이미지를 콜라주(반응형)
+
+태그 배지: “클린 · 자연주의 · 연구기반”
+
+About.tsx (#about)
+
+3열 핵심가치 카드: 사람 중심 / 자연 중심 / 품질 중심
+
+짧은 대표 인사말(2~3 문단 더미), 연혁 타임라인(예: 2019~2025 더미), 핵심 수치(연구인력/원료국가/인증 수)
+
+RnD.tsx (#rnd)
+
+프로세스: 원료선정 → 연구·검증 → 제조 → 품질관리 (4단계 카드)
+
+인증/특허 배지(이미지) + 텍스트 설명(GMP/HACCP/ISO 더미)
+
+실험실 이미지+캡션
+
+Product.tsx (#product)
+
+대표 제품 센시비 와이드 카드
+
+상단 배지(“참당귀 추출물”, “컨디션 밸런스”, “간결 포뮬러”)
+
+기능 요약 문장: 효능 단정 금지 톤 (“도움을 줄 수 있도록 기획되었습니다”)
+
+제품 정보 블록: 원료/함량(더미), 섭취 방법(더미), 주의사항(법정 문구 박스)
+
+추가 제품 2~4개용 자리 카드(더미)
+
+Partners.tsx (#partners)
+
+파트너 로고 그레이스케일 → hover 시 컬러 전환
+
+News.tsx (#news)
+
+공지/보도자료 카드 리스트(날짜/카테고리 배지/간단요약/자세히 보기 더미)
+
+Contact.tsx (#contact)
+
+문의유형(제휴·납품/제품/기타), 이름/이메일/연락처/내용, 개인정보 동의 체크
+
+onSubmit에서 필수값/이메일 형식 검증 → 일단 성공 알림. 서버는 없으므로 안내 메시지와 mailto: 또는 추후 API 연결 TODO 표기
+
+UI 디테일 (Tailwind + shadcn/ui)
+
+버튼: Button(shadcn) 변형 — primary(brand 배경/white), ghost(투명 배경, brand 보더/텍스트)
+
+카드: Card(radius-xl, border line, shadow-sm, hover: translate-y-[2px])
+
+배지: pill 모양, bg-brand-2 text-brand
+
+아이콘: lucide-react (Leaf, FlaskConical, ShieldCheck, Mail 등)
+
+접근성 & 성능
+
+모든 이미지 alt 제공, 앵커 링크는 텍스트 명확
+
+키보드 탭 포커스 스타일 커스텀
+
+loading="lazy" 적용, 불필요한 라이브러리 금지
+
+Helmet으로 title/description/og 메타 삽입
+
+robots.txt, sitemap.xml 간단 생성(루트)
+
+예시 카피 (컴포넌트에 삽입해줘, 과장 금지 톤)
+
+Hero:
+
+H1: “자연의 지혜에 과학을 더하다”
+
+P: “메이딘은 원료의 출처부터 제조, 그리고 품질관리까지 깐깐한 기준으로 일상의 건강을 설계합니다.”
+
+Product 센시비:
+
+“센시비는 참당귀 추출물 기반으로 기획된 일상 컨디션 케어 제품입니다. 바쁜 일상에서 균형을 돕도록 단순하고 명료한 포뮬러를 지향합니다.”
+
+법정 문구 박스: “본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개인의 상태에 따라 체감이 다를 수 있습니다.”
+
+App 구조(App.tsx)
+
+HelmetProvider 래핑
+
+Header 고정 → 섹션 순서: Hero, About, RnD, Product, Partners, News, Contact → Footer
+
+내비 클릭 시 부드러운 스크롤(scrollIntoView({ behavior: "smooth" }))
+
+완료 기준
+
+모바일~데스크톱 반응형
+
+앵커 내비 정상 동작
+
+메타 태그/OG 이미지 적용(/src/assets/images/og.jpg)
+
+접근성(포커스/대체텍스트)
+
+성능(이미지 lazy, CSS 1파일, 최소 JS)
+
+위 명세대로 프로젝트와 파일을 생성하고, 더미 이미지/텍스트를 채워서 바로 실행 가능한 상태로 완성하라. 완료 후 README 섹션을 App 하단에 간단히 표기(수정/배포 포인트).
