@@ -101,6 +101,7 @@ export const NAV_ITEMS = [
   { id: "about", label: "회사소개" },
   { id: "rnd", label: "연구·기술" },
   { id: "product", label: "제품소개" },
+  { id: "certifications", label: "인증·등록" },
   { id: "news", label: "소식" },
   { id: "contact", label: "문의" },
 ];

@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import RnD from "@/components/RnD";
 import Product from "@/components/Product";
+import Certifications from "@/components/Certifications";
 import Partners from "@/components/Partners";
 import News from "@/components/News";
 import Contact from "@/components/Contact";
@@ -38,6 +39,7 @@ export default function Home() {
           <About />
           <RnD />
           <Product />
+          <Certifications />
           <Partners />
           <News />
           <Contact />

@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PRODUCT } from "@/lib/constants";
 import { AlertCircle } from "lucide-react";
-import productImg from "@assets/generated_images/Sensibi_product_bottle_d14d4d44.png";
+import productImg from "@assets/image_1762400708494.png";
 
 export default function Product() {
   const additionalProducts = [
