@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { BRAND } from "@/lib/constants";
 import { ArrowRight, Download } from "lucide-react";
 import heroBackgroundImg from "@assets/generated_images/Hero_background_abstract_dd97bdfb.png";
-import productImg from "@assets/generated_images/Sensibi_product_bottle_d14d4d44.png";
+import productImg from "@assets/image_1762400826814.png";
 import ingredientImg from "@assets/generated_images/Angelica_herb_ingredient_c0172ccc.png";
 import labImg from "@assets/generated_images/Research_laboratory_scene_cd235656.png";
 
