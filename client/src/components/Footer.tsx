@@ -1,4 +1,5 @@
 import { BRAND, COMPANY_INFO } from "@/lib/constants";
+import logoDarkImg from "@assets/image_1764053921759.png";
 
 export default function Footer() {
   return (
@@ -6,8 +7,12 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="lg:col-span-2">
-            <div className="text-2xl font-bold text-white mb-3">
-              {BRAND.nameEn}
+            <div className="mb-3">
+              <img 
+                src={logoDarkImg} 
+                alt={BRAND.nameEn}
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-sm text-white/80 mb-4 max-w-md">
               {BRAND.slogan}

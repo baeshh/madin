@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { NAV_ITEMS, BRAND, HEADER_LINKS } from "@/lib/constants";
 import { Menu, X, User, ExternalLink } from "lucide-react";
+import logoImg from "@assets/image_1764053910778.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,9 +50,11 @@ export default function Header() {
               data-testid="button-logo"
               aria-label="메이딘 홈으로 이동"
             >
-              <span className="text-xl lg:text-2xl font-bold text-[#1a365d]">
-                {BRAND.nameEn}
-              </span>
+              <img 
+                src={logoImg} 
+                alt={BRAND.nameEn}
+                className="h-8 lg:h-10 w-auto"
+              />
             </button>
 
             <nav className="hidden lg:flex items-center" aria-label="주요 메뉴">
