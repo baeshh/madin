@@ -49,27 +49,28 @@ export default function News() {
   ];
 
   const categoryColors: Record<string, string> = {
-    보도자료: "bg-primary/10 text-primary",
-    공지사항: "bg-accent/10 text-accent",
-    이벤트: "bg-chart-2/10 text-chart-2",
+    보도자료: "bg-[#1a365d]/10 text-[#1a365d]",
+    공지사항: "bg-amber-100 text-amber-700",
+    이벤트: "bg-emerald-100 text-emerald-700",
   };
 
   return (
     <section
       id="news"
-      className="py-20 md:py-28 bg-surface"
+      className="py-20 md:py-28 bg-gray-50"
       data-testid="section-news"
     >
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16">
+          <p className="text-[#1a365d] font-medium mb-2">NEWS</p>
           <h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6"
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
             data-testid="text-news-title"
           >
             소식
           </h2>
           <p
-            className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto"
+            className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto"
             data-testid="text-news-description"
           >
             메이딘의 최신 소식과 공지사항을 확인하세요
@@ -80,12 +81,12 @@ export default function News() {
           {newsItems.map((item, index) => (
             <Card
               key={index}
-              className="group hover:shadow-md transition-all duration-300 rounded-xl cursor-pointer overflow-hidden"
+              className="group hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden border-gray-200 bg-white"
               data-testid={`card-news-${index}`}
             >
               <CardContent className="p-6 space-y-4 h-full flex flex-col">
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
                     <Calendar className="w-4 h-4" />
                     <span>{item.date}</span>
                   </div>
@@ -93,7 +94,7 @@ export default function News() {
                     variant="secondary"
                     className={`text-xs px-2 py-0.5 ${
                       categoryColors[item.category] ||
-                      "bg-muted text-muted-foreground"
+                      "bg-gray-100 text-gray-600"
                     }`}
                     data-testid={`badge-category-${index}`}
                   >
@@ -102,16 +103,16 @@ export default function News() {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#1a365d] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
                     {item.summary}
                   </p>
                 </div>
 
                 <button
-                  className="flex items-center gap-1 text-sm text-primary group-hover:gap-2 transition-all font-medium"
+                  className="flex items-center gap-1 text-sm text-[#1a365d] group-hover:gap-2 transition-all font-medium"
                   data-testid={`button-news-detail-${index}`}
                   onClick={() => alert("상세 내용은 준비 중입니다")}
                 >

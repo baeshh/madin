@@ -4,6 +4,15 @@
 
 This is a single-page brand website for Meidin (메이딘), a natural supplement company specializing in science-backed wellness products. The flagship product is Sensibi (센시비), an anti-inflammatory supplement based on Angelica gigas extract. The site is built as a static, marketing-focused web application without e-commerce functionality, designed to establish brand credibility and facilitate business inquiries.
 
+## Recent Changes (2025.11.25)
+
+- **Design Overhaul**: Changed from Nature's Farm-inspired green theme to DRS Korea-inspired professional corporate style
+- **Color System**: Updated to navy-based color scheme (#1a365d primary)
+- **Navigation**: Restructured to 회사소개 / 제품소개 / 제휴약국 찾기 / 상담문의 + 로그인/회원가입/약사전용몰
+- **Hero Section**: Navy gradient background with product showcase
+- **Partners Section**: Transformed into "제휴약국 찾기" with pharmacy search functionality
+- **Footer**: Updated to navy background with white text
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -20,17 +29,25 @@ Preferred communication style: Simple, everyday language.
 **UI System:**
 - shadcn/ui component library built on Radix UI primitives
 - Tailwind CSS for utility-first styling with custom design tokens
-- Custom color system based on Korean wellness brand aesthetics (Nature's Farm inspired):
-  - Primary brand color: `#2F8F6B` (calming green)
-  - Secondary: `#DCF2EA` (light mint)
-  - Accent: `#B88C4A` (gold)
+- Custom color system based on DRS Korea-inspired corporate aesthetics:
+  - Primary brand color: `#1a365d` (professional navy)
+  - Primary light: `#2d4a7c` (hover state)
+  - Accent: `#7dd3fc` (sky blue highlight)
   - Pretendard font family via CDN
 
 **Component Structure:**
 - Page components in `client/src/pages/` (Home, NotFound)
-- Feature sections as discrete components (Hero, About, RnD, Product, Partners, News, Contact)
+- Feature sections as discrete components (Hero, About, RnD, Product, Certifications, Partners, News, Contact)
 - Reusable UI components from shadcn/ui in `client/src/components/ui/`
 - Form handling with react-hook-form and Zod validation
+
+**Navigation Structure:**
+- 회사소개 (#about)
+- 제품소개 (#product)
+- 제휴약국 찾기 (#partners)
+- 상담문의 (#contact)
+- 로그인/회원가입 (external links)
+- 약사전용몰 (external link)
 
 **State Management:**
 - TanStack Query (React Query) for server state and API calls
@@ -126,11 +143,13 @@ Preferred communication style: Simple, everyday language.
 - Storage interface allows easy database integration when needed
 
 **Asset Strategy:**
-- Static images in `attached_assets/generated_images/`
+- Static images in `attached_assets/` directory
+- Real product images (Sensibi product box)
+- Real business certificates (사업자등록증, 상표등록증, 건강기능식품 영업신고증)
 - Vite asset imports with content hashing
 - CDN-friendly font loading (Pretendard via jsDelivr)
 
 **Responsive Design:**
 - Mobile-first approach with Tailwind breakpoints
 - Custom design guidelines in `design_guidelines.md`
-- Consistent spacing system (py-14 mobile, py-20 desktop)
+- Consistent spacing system (py-20 mobile, py-28 desktop)

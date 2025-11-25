@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { NAV_ITEMS, BRAND } from "@/lib/constants";
-import { Menu, X } from "lucide-react";
+import { NAV_ITEMS, BRAND, HEADER_LINKS } from "@/lib/constants";
+import { Menu, X, User, ExternalLink } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,85 +35,128 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-sm"
-          : "bg-white/70 backdrop-blur-sm"
+          ? "bg-white shadow-md"
+          : "bg-white"
       }`}
       data-testid="header-main"
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold text-primary hover-elevate active-elevate-2 px-4 py-2 rounded-md transition-colors"
-            data-testid="button-logo"
-            aria-label="메이딘 홈으로 이동"
-          >
-            {BRAND.nameEn}
-          </button>
+      <div className="border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center gap-2 hover-elevate active-elevate-2 px-2 py-1 rounded-md transition-colors"
+              data-testid="button-logo"
+              aria-label="메이딘 홈으로 이동"
+            >
+              <span className="text-xl lg:text-2xl font-bold text-[#1a365d]">
+                {BRAND.nameEn}
+              </span>
+            </button>
 
-          <nav className="hidden md:flex items-center gap-1" aria-label="주요 메뉴">
-            {NAV_ITEMS.map((item) => (
-              <Button
-                key={item.id}
-                variant="ghost"
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground"
-                data-testid={`link-${item.id}`}
+            <nav className="hidden lg:flex items-center" aria-label="주요 메뉴">
+              {NAV_ITEMS.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-6 py-2 text-sm font-medium text-gray-700 hover:text-[#1a365d] transition-colors relative
+                    ${index !== NAV_ITEMS.length - 1 ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-3 after:w-px after:bg-gray-200" : ""}`}
+                  data-testid={`link-${item.id}`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+
+            <div className="hidden lg:flex items-center gap-2">
+              <a
+                href={HEADER_LINKS.login}
+                className="text-sm text-gray-600 hover:text-[#1a365d] transition-colors px-3 py-2"
+                data-testid="link-login"
               >
-                {item.label}
-              </Button>
-            ))}
-          </nav>
+                로그인
+              </a>
+              <span className="text-gray-300">|</span>
+              <a
+                href={HEADER_LINKS.register}
+                className="text-sm text-gray-600 hover:text-[#1a365d] transition-colors px-3 py-2"
+                data-testid="link-register"
+              >
+                회원가입
+              </a>
+              <a
+                href={HEADER_LINKS.pharmacistMall}
+                className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 bg-[#1a365d] text-white text-sm font-medium rounded hover:bg-[#2d4a7c] transition-colors"
+                data-testid="link-pharmacist-mall"
+              >
+                약사전용몰
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
 
-          <Button
-            onClick={() => scrollToSection("contact")}
-            className="hidden md:inline-flex"
-            data-testid="button-contact-cta"
-          >
-            제휴·납품 문의
-          </Button>
-
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover-elevate active-elevate-2 rounded-md"
-            data-testid="button-mobile-menu"
-            aria-label="모바일 메뉴"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 hover-elevate active-elevate-2 rounded-md"
+              data-testid="button-mobile-menu"
+              aria-label="모바일 메뉴"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-gray-700" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
+      </div>
 
-        {isMobileMenuOpen && (
-          <nav
-            className="md:hidden py-4 border-t border-border"
-            aria-label="모바일 메뉴"
-          >
+      {isMobileMenuOpen && (
+        <nav
+          className="lg:hidden bg-white border-b border-gray-100 shadow-lg"
+          aria-label="모바일 메뉴"
+        >
+          <div className="container mx-auto px-4 py-4">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-3 hover-elevate active-elevate-2 rounded-md text-foreground"
+                className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#1a365d] rounded-md transition-colors"
                 data-testid={`link-mobile-${item.id}`}
               >
                 {item.label}
               </button>
             ))}
-            <div className="px-4 pt-2">
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="w-full"
-                data-testid="button-mobile-contact-cta"
+            
+            <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
+              <div className="flex items-center gap-4 px-4">
+                <a
+                  href={HEADER_LINKS.login}
+                  className="text-sm text-gray-600 hover:text-[#1a365d]"
+                  data-testid="link-mobile-login"
+                >
+                  로그인
+                </a>
+                <span className="text-gray-300">|</span>
+                <a
+                  href={HEADER_LINKS.register}
+                  className="text-sm text-gray-600 hover:text-[#1a365d]"
+                  data-testid="link-mobile-register"
+                >
+                  회원가입
+                </a>
+              </div>
+              <a
+                href={HEADER_LINKS.pharmacistMall}
+                className="mx-4 flex items-center justify-center gap-1.5 px-4 py-3 bg-[#1a365d] text-white text-sm font-medium rounded hover:bg-[#2d4a7c] transition-colors"
+                data-testid="link-mobile-pharmacist-mall"
               >
-                제휴·납품 문의
-              </Button>
+                약사전용몰
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
-          </nav>
-        )}
-      </div>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

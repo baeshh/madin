@@ -45,10 +45,10 @@ export default function ContactForm() {
     mutationFn: async (data: ContactInquiry) => {
       return await apiRequest("POST", "/api/contact", data);
     },
-    onSuccess: (response) => {
+    onSuccess: () => {
       toast({
         title: "문의 접수 완료",
-        description: response.message,
+        description: "담당자가 확인 후 연락드리겠습니다.",
       });
       form.reset();
     },
