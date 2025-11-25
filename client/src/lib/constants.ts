@@ -107,9 +107,6 @@ export const PARTNERS_COMPANIES = [
   { name: "바이오벤처 연구소", category: "바이오" },
   { name: "한국생명공학연구원", category: "연구소" },
   { name: "천연물신약연구센터", category: "연구소" },
-  { name: "프리미엄 바이오텍", category: "바이오" },
-  { name: "GMP 제조 파트너", category: "제조" },
-  { name: "원료 공급 파트너", category: "원료" },
 ];
 
 export const PATENTS = [

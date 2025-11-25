@@ -151,19 +151,17 @@ export default function About() {
               협력사
             </h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="flex flex-wrap justify-center items-center gap-6">
             {PARTNERS_COMPANIES.map((partner, index) => (
               <Card
                 key={index}
-                className="text-center border-[#e2e8f0] hover:shadow-md transition-shadow"
+                className="text-center border-[#e2e8f0] hover:shadow-md transition-shadow w-48"
                 data-testid={`card-partner-${index}`}
               >
                 <CardContent className="py-6 px-4">
                   <div className="w-12 h-12 bg-[#f8fafc] rounded-full flex items-center justify-center mx-auto mb-3">
                     {partner.category === "바이오" && <FlaskConical className="w-6 h-6 text-[#1a365d]" />}
                     {partner.category === "연구소" && <Building2 className="w-6 h-6 text-[#1a365d]" />}
-                    {partner.category === "제조" && <Building2 className="w-6 h-6 text-[#1a365d]" />}
-                    {partner.category === "원료" && <FlaskConical className="w-6 h-6 text-[#1a365d]" />}
                   </div>
                   <p className="text-sm font-medium text-[#1e293b] mb-1">{partner.name}</p>
                   <Badge variant="secondary" className="text-xs">
@@ -172,6 +170,9 @@ export default function About() {
                 </CardContent>
               </Card>
             ))}
+            <div className="flex items-center justify-center w-32 h-32">
+              <span className="text-lg text-[#64748b] font-medium">등 6개</span>
+            </div>
           </div>
         </div>
 
