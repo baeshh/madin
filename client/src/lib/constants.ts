@@ -1,9 +1,48 @@
 export const BRAND = {
   name: "메이딘",
   nameEn: "MEIDIN",
-  slogan: "자연의 지혜에 과학을 더하다",
-  description: "메이딘은 원료의 출처부터 제조, 품질관리까지 깐깐한 기준으로 일상의 건강을 설계합니다.",
+  nameOrigin: "MAYDIN - May Your Day In Natural balance",
+  slogan: "자연의 힘으로 일상의 건강을 설계합니다",
+  description: "자연의 힘을 통해 면역체계를 강화하여 약해진 몸과 피부를 보호하고, 균형을 유지하는데 집중합니다.",
   philosophy: "우리는 단기적인 유행이 아닌, 과학적으로 검증된 접근을 통해 인체에 도움이 되는 진짜 영양제를 만듭니다. 모든 제품은 연구 데이터를 기반으로 기획되며, '센시비'와 같은 참당귀 추출물 제품은 인체 염증 반응 개선을 돕는 천연 성분 중심의 컨디션 케어 솔루션으로 개발되었습니다.",
+};
+
+export const MISSION_VISION = {
+  mission: {
+    title: "내면의 균형과 회복",
+    description: "우리 몸의 자연스러운 방어 메커니즘을 강화하여, 민감한 피부 고민과 삶의 질을 저해하는 문제들을 근본적으로 개선하는 통합적인 건강 솔루션을 제공합니다.",
+  },
+  vision: {
+    title: "건강한 삶을 위한 파트너",
+    description: "단순한 제품을 넘어, 인류의 자연 치유력을 극대화하는 신뢰받는 기업으로 성장해 건강하고 활력 있는 삶을 선도합니다.",
+  },
+};
+
+export const HEALTH_STORY = {
+  intro: "고객과 가족의 풍요롭고 행복한 삶을 위한 새로운 도약을 시작합니다. 전문가 약사를 통한 정확하고 올바른 제품과 정보를 제공합니다.",
+  values: [
+    {
+      id: "expertise",
+      title: "약사와 함께 성장하는 회사",
+      subtitle: "전문성 기반",
+      description: "제품 개발 및 정보 제공의 전 과정에서 전문가와의 협력을 최우선하여 전문 지식을 활용해 제품에 반영합니다.",
+      icon: "GraduationCap",
+    },
+    {
+      id: "solution",
+      title: "약사를 통해 전달하는 고객의 필요",
+      subtitle: "맞춤형 솔루션",
+      description: "약사는 고객님의 건강 상태와 고민을 가장 가까이에서 듣고 이해하는 전문가의 생생한 현장 경험을 제품 개발에 연결합니다.",
+      icon: "HeartHandshake",
+    },
+    {
+      id: "quality",
+      title: "최적의 제품을 생산하기 위한 노력",
+      subtitle: "타협없는 품질",
+      description: "성분 간의 시너지 효과를 극대화하고, 전문가들의 검토로 엄선된 원료만을 사용합니다.",
+      icon: "Award",
+    },
+  ],
 };
 
 export const PRODUCT = {
@@ -62,6 +101,42 @@ export const STATS = [
   { label: "연구 인력", value: "12+", unit: "명" },
   { label: "원료 공급 국가", value: "8", unit: "개국" },
   { label: "보유 인증", value: "5+", unit: "종" },
+];
+
+export const PARTNERS_COMPANIES = [
+  { name: "바이오벤처 연구소", category: "바이오" },
+  { name: "한국생명공학연구원", category: "연구소" },
+  { name: "천연물신약연구센터", category: "연구소" },
+  { name: "프리미엄 바이오텍", category: "바이오" },
+  { name: "GMP 제조 파트너", category: "제조" },
+  { name: "원료 공급 파트너", category: "원료" },
+];
+
+export const PATENTS = [
+  {
+    id: 1,
+    title: "컴파운드 케이를 포함하는 홍삼 유래 당화 산물 제조방법",
+    number: "10-2279749",
+    status: "등록",
+  },
+  {
+    id: 2,
+    title: "맞춤형 건강기능식품 레시피의 제공 방법",
+    number: "10-2268088",
+    status: "등록",
+  },
+  {
+    id: 3,
+    title: "여성갱년기 증상 예방 및 개선용 조성물, 이를 포함하는 건강기능식품 및 이의 제조방법",
+    number: "10-2776816",
+    status: "등록",
+  },
+  {
+    id: 4,
+    title: "참당귀 추출물을 이용한 피부개선용 화장품 조성물, 이를 포함한 피부개선용 화장품 및 피부개선용 화장품 제조방법",
+    number: "10-2633256",
+    status: "등록",
+  },
 ];
 
 export const RND_PROCESS = [
