@@ -10,7 +10,14 @@ This is a single-page brand website for Meidin (메이딘), a natural supplement
 - **Color System**: Updated to navy-based color scheme (#1a365d primary)
 - **Navigation**: Restructured to 회사소개 / 제품소개 / 제휴약국 찾기 / 상담문의 + 로그인/회원가입/약사전용몰
 - **Hero Section**: Navy gradient background with product showcase
-- **Partners Section**: Transformed into "제휴약국 찾기" with pharmacy search functionality
+- **Partners Section**: Complete redesign with interactive map integration
+  - Leaflet/OpenStreetMap for pharmacy location display
+  - Region/city dropdown filters (전국 → 시/도 → 시/군/구)
+  - Product checkbox filter (센시비)
+  - Text search for pharmacy name/address
+  - Clickable pharmacy table with map synchronization
+  - Details panel with 네이버 지도에서 보기 button
+- **Product Section**: Updated with detailed ingredient table (5 components with amounts/benefits), dosage info, PDF download button, and 9 upcoming product tiles
 - **Footer**: Updated to navy background with white text
 
 ## User Preferences
