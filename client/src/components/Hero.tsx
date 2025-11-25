@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { BRAND, PRODUCT } from "@/lib/constants";
+import { BRAND } from "@/lib/constants";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import productImg from "@assets/image_1762400826814.png";
+import heroBgImg from "@assets/generated_images/natural_wellness_botanical_herbs_scene.png";
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -19,67 +19,54 @@ export default function Hero() {
       className="relative pt-20 lg:pt-24 overflow-hidden"
       data-testid="section-hero"
     >
-      <div className="bg-gradient-to-r from-[#1a365d] via-[#234876] to-[#2d5a87] text-white">
-        <div className="container mx-auto px-4 py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <p className="text-[#7dd3fc] text-sm font-medium tracking-wider uppercase">
-                  Premium Natural Supplement
-                </p>
-                <h1
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
-                  data-testid="text-hero-title"
-                >
-                  {BRAND.slogan}
-                </h1>
-                <p
-                  className="text-lg text-gray-200 leading-relaxed max-w-lg"
-                  data-testid="text-hero-description"
-                >
-                  {BRAND.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="gap-2 bg-white text-[#1a365d] hover:bg-gray-100 font-semibold"
-                  onClick={() => scrollToSection("product")}
-                  data-testid="button-view-product"
-                  aria-label="제품 상세 보기"
-                >
-                  제품 보러가기
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="gap-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm"
-                  onClick={() => scrollToSection("about")}
-                  data-testid="button-view-about"
-                  aria-label="회사 소개 보기"
-                >
-                  회사소개
-                </Button>
-              </div>
+      <div className="relative min-h-[500px] lg:min-h-[600px]">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBgImg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1a365d]/95 via-[#1a365d]/80 to-[#1a365d]/40" />
+        
+        <div className="relative container mx-auto px-4 py-16 lg:py-24">
+          <div className="max-w-2xl space-y-8">
+            <div className="space-y-4">
+              <p className="text-[#7dd3fc] text-sm font-medium tracking-wider uppercase">
+                Premium Natural Supplement
+              </p>
+              <h1
+                className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-white"
+                data-testid="text-hero-title"
+              >
+                {BRAND.slogan}
+              </h1>
+              <p
+                className="text-lg text-gray-200 leading-relaxed"
+                data-testid="text-hero-description"
+              >
+                {BRAND.description}
+              </p>
             </div>
 
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl" />
-                <div
-                  className="relative rounded-2xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm p-4"
-                  data-testid="img-hero-product"
-                >
-                  <img
-                    src={productImg}
-                    alt={`${PRODUCT.name} 제품 이미지`}
-                    className="w-full max-w-md rounded-xl"
-                    loading="eager"
-                  />
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="gap-2 bg-white text-[#1a365d] hover:bg-gray-100 font-semibold"
+                onClick={() => scrollToSection("product")}
+                data-testid="button-view-product"
+                aria-label="제품 상세 보기"
+              >
+                제품 보러가기
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm"
+                onClick={() => scrollToSection("about")}
+                data-testid="button-view-about"
+                aria-label="회사 소개 보기"
+              >
+                회사소개
+              </Button>
             </div>
           </div>
         </div>
