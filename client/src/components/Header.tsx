@@ -55,17 +55,25 @@ export default function Header() {
             </button>
 
             <nav className="hidden lg:flex items-center" aria-label="주요 메뉴">
-              {NAV_ITEMS.map((item, index) => (
+              {NAV_ITEMS.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-6 py-2 text-sm font-medium text-gray-700 hover:text-[#1a365d] transition-colors relative
-                    ${index !== NAV_ITEMS.length - 1 ? "after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-3 after:w-px after:bg-gray-200" : ""}`}
+                  className="px-6 py-2 text-sm font-medium text-gray-700 hover:text-[#1a365d] transition-colors relative after:content-[''] after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-3 after:w-px after:bg-gray-200"
                   data-testid={`link-${item.id}`}
                 >
                   {item.label}
                 </button>
               ))}
+              <a
+                href={HEADER_LINKS.kakaoChannel}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-2 text-sm font-medium text-gray-700 hover:text-[#1a365d] transition-colors"
+                data-testid="link-contact"
+              >
+                상담문의
+              </a>
             </nav>
 
             <div className="hidden lg:flex items-center gap-2">
@@ -126,6 +134,15 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+            <a
+              href={HEADER_LINKS.kakaoChannel}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#1a365d] rounded-md transition-colors"
+              data-testid="link-mobile-contact"
+            >
+              상담문의
+            </a>
             
             <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
               <div className="flex items-center gap-4 px-4">

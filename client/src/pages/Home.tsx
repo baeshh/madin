@@ -7,7 +7,6 @@ import Product from "@/components/Product";
 import Certifications from "@/components/Certifications";
 import Partners from "@/components/Partners";
 import News from "@/components/News";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { SEO } from "@/lib/seo";
 import ogImage from "@assets/generated_images/OG_social_preview_1af0bea4.png";
@@ -42,7 +41,6 @@ export default function Home() {
           <Certifications />
           <Partners />
           <News />
-          <Contact />
         </main>
         <Footer />
       </div>

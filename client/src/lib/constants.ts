@@ -193,11 +193,11 @@ export const NAV_ITEMS = [
   { id: "about", label: "회사소개" },
   { id: "product", label: "제품소개" },
   { id: "partners", label: "제휴약국 찾기" },
-  { id: "contact", label: "상담문의" },
 ];
 
 export const HEADER_LINKS = {
   login: "#",
   register: "#",
   pharmacistMall: "#",
+  kakaoChannel: "https://pf.kakao.com/_xdHaHn",
 };
