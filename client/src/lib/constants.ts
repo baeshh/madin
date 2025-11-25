@@ -48,14 +48,34 @@ export const HEALTH_STORY = {
 export const PRODUCT = {
   name: "센시비",
   nameEn: "SENSIBI",
-  descShort: "참당귀 추출물 기반 컨디션 케어",
-  description: "센시비는 참당귀 추출물 기반으로 기획된 일상 컨디션 케어 제품입니다. 바쁜 일상에서 균형을 돕도록 단순하고 명료한 포뮬러를 지향합니다.",
-  features: ["참당귀 추출물", "일상 컨디션 밸런스", "간결한 포뮬러 지향"],
-  ingredients: "참당귀추출물 500mg, 비타민B6 1.5mg, 마그네슘 100mg",
-  dosage: "1일 1회, 1회 2캡슐을 충분한 물과 함께 섭취하십시오.",
+  nameOrigin: "Sense(감각) + Balance(균형)",
+  descShort: "과항진된 면역체계 개선 복합영양제",
+  description: "'센시비'는 '감각(Sense)'과 '균형(Balance)'을 결합한 단어로, 과항진된 면역체계를 개선하기 위해 개발된 복합영양제입니다.",
+  ingredients: [
+    { name: "비타민 D", nameEn: "Vitamin D", amount: "25μg", benefit: "면역 조절 및 뼈 건강" },
+    { name: "아연", nameEn: "Zinc", amount: "10mg", benefit: "면역 세포 생성 및 세포 분열" },
+    { name: "셀레늄", nameEn: "Selenium", amount: "50μg", benefit: "강력한 항산화 및 면역 물질 생성" },
+    { name: "강황추출물", nameEn: "Curcumin", amount: "500mg", benefit: "항염증 및 통증 완화" },
+    { name: "참당귀추출물", nameEn: "Decursin", amount: "200mg", benefit: "염증 유발 억제 기능 및 항산화 작용" },
+  ],
+  dosage: "500mg(1정) × 2정 = 1,000mg 복용",
+  dosageDetail: "1일 1회, 1회 2정을 충분한 물과 함께 섭취하십시오.",
   caution: "임산부, 수유부, 특정 질환이 있거나 의약품 복용 중인 경우 전문가와 상담 후 섭취하십시오.",
   legal: "본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 개인의 상태에 따라 체감이 다를 수 있습니다.",
+  pdfUrl: "#",
 };
+
+export const UPCOMING_PRODUCTS = [
+  { name: "오메가3", icon: "Fish" },
+  { name: "유산균", icon: "Pill" },
+  { name: "루테인", icon: "Eye" },
+  { name: "피로회복", icon: "Zap" },
+  { name: "전립선", icon: "Heart" },
+  { name: "관절", icon: "Bone" },
+  { name: "잇몸", icon: "Smile" },
+  { name: "센시비 크림", icon: "Droplet" },
+  { name: "센시비 연고", icon: "Droplets" },
+];
 
 export const COMPANY_INFO = {
   address: "울산광역시 남구 도산로107번길 9, 2층 (달동)",
