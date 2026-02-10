@@ -12,13 +12,15 @@ function Router() {
   const base = import.meta.env.BASE_URL;
   const [location] = useLocation();
 
-  // Normalize base path: remove trailing slash, keep leading slash (except for root)
+  // Normalize base path: remove trailing slash
   const basePath = base === "/" ? "" : base.replace(/\/$/, "");
 
-  // Remove base path from current location
-  const pathWithoutBase = basePath && location.startsWith(basePath)
-    ? location.slice(basePath.length) || "/"
-    : location;
+  // Remove base path from current location for routing
+  // wouter's useLocation already includes the base path in the location
+  let pathWithoutBase = location;
+  if (basePath && location.startsWith(basePath)) {
+    pathWithoutBase = location.slice(basePath.length) || "/";
+  }
 
   return (
     <Switch location={pathWithoutBase}>
