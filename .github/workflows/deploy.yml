@@ -34,7 +34,26 @@ jobs:
       - name: Build
         run: npm run build:client
         env:
-          GITHUB_PAGES: true
+          GITHUB_PAGES: "true"
+          NODE_ENV: production
+
+      - name: Verify build output
+        run: |
+          echo "Checking build output..."
+          if [ -d "dist/public" ]; then
+            echo "Build directory exists"
+            ls -la dist/public
+            if [ -f "dist/public/index.html" ]; then
+              echo "✓ index.html found"
+              head -20 dist/public/index.html
+            else
+              echo "✗ index.html NOT found"
+              exit 1
+            fi
+          else
+            echo "✗ Build directory not found"
+            exit 1
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
