@@ -12,14 +12,27 @@ function Router() {
   const base = import.meta.env.BASE_URL;
   const [location] = useLocation();
 
-  // Normalize base path: remove trailing slash
+  // Normalize base path: remove trailing slash, ensure it starts with /
   const basePath = base === "/" ? "" : base.replace(/\/$/, "");
 
   // Remove base path from current location for routing
-  // wouter's useLocation already includes the base path in the location
+  // wouter's useLocation returns the full pathname including base
   let pathWithoutBase = location;
-  if (basePath && location.startsWith(basePath)) {
-    pathWithoutBase = location.slice(basePath.length) || "/";
+  
+  if (basePath) {
+    // If we have a base path and location starts with it, remove it
+    if (location.startsWith(basePath)) {
+      pathWithoutBase = location.slice(basePath.length) || "/";
+    }
+    // If location doesn't start with base path but is just "/", keep it
+    else if (location === "/") {
+      pathWithoutBase = "/";
+    }
+  }
+
+  // Debug: log the routing info (remove in production if needed)
+  if (import.meta.env.DEV) {
+    console.log("Router Debug:", { base, basePath, location, pathWithoutBase });
   }
 
   return (
